@@ -37,6 +37,7 @@ func Run(ctx context.Context, detect DetectFunc, generate GenerateFunc) {
 	case "generate":
 		buildDockerfile, runDockerfile, err := generate(ctx)
 		if err != nil {
+			log.Println(err)
 			os.Exit(1)
 		}
 
